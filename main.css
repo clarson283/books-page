@@ -1,0 +1,13 @@
+img {
+	width: 80%;
+	float: left;
+}
+
+.nav {
+	width: 20%;
+	float: right;
+}
+
+#head {
+	padding: 20px;
+}
