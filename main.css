@@ -33,4 +33,7 @@ img {
 
 #head {
 	padding: 20px;
+	font-size: 26px;
+	text-transform: uppercase;
+	letter-spacing: 6px;
 }
