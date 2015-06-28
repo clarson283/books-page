@@ -1,5 +1,4 @@
 
-
 var i = 0;
 
 var slides = new Array();
