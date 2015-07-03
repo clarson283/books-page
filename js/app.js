@@ -42,9 +42,16 @@ function bestSellers (datePicked) {
 	$.ajax({
 		type: 'GET',
 		url: 'http://api.nytimes.com/svc/books/v3/lists/overview/.jsonp?published_date=' + datePicked + '&api-key=ddaa9f57137bd7d9c261b9c191a22586:8:72425285',
-		dataType: 'jsonp',
+		dataType: 'jsonp', //jsonp works!!
 	})
-	.done(console.log(datePicked))
+	.done(function(bestSellers) {
+		for (i = 0; i <= num_results.length; i++) {
+			var results = document.getElementById("bestSellerResults");
+				newDiv = document.createElement("div");
+			$('#results').append(newDiv);//suddenly not working.. hmmmmmmmmm
+			console.log(datePicked);
+		}
+	});
 
 
 }
