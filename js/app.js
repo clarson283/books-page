@@ -41,15 +41,18 @@ getYearDropdown(year);
 var bestSellers = function (datePicked) {
 	$.ajax({
 		type: 'GET',
-		url: 'http://api.nytimes.com/svc/books/v3/lists/overview/.jsonp?published_date=' + datePicked + '&api-key=ddaa9f57137bd7d9c261b9c191a22586:8:72425285',
+		url: 'http://api.nytimes.com/svc/books/v3/lists/overview/.jsonp?callback=booksList&published_date=' + datePicked + '&api-key=ddaa9f57137bd7d9c261b9c191a22586:8:72425285',
 		dataType: 'jsonp', //jsonp works!!
 	})
 	.done(function(bestSellers) {
-		//for (i = 0; i <= results.length; i++) {
+		//for (i = 0; i <= 20; i++) {
 			//var results = document.getElementById("bestSellerResults");
-				newDiv = document.createElement("div");
+			var newDiv = document.createElement("div");
 			$('#bestSellerResults').append(newDiv);//should work by just using 'results'.. work on this
+			
 			console.log(bestSellers);
+
+			newDiv.innerHTML = bestSellers.results.bestsellers_date;
 		//}
 	});
 
