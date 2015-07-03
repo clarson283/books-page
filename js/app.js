@@ -24,7 +24,7 @@ window.onload = slideshow;
 function getYearDropdown (year) {
     var year = document.getElementById("year");
     var thisYear = new Date().getFullYear();
-    var minYear = thisYear - 90;
+    var minYear = thisYear - 7;
     
     for(var i = thisYear; i >= minYear; i--) {
         var option = document.createElement('option');
@@ -36,6 +36,20 @@ function getYearDropdown (year) {
 }
 
 getYearDropdown(year);
+
+
+function bestSellers (datePicked) {
+	$.ajax({
+		type: 'GET',
+		url: 'http://api.nytimes.com/svc/books/v3/lists/overview/.json?published_date=' + datePicked + '&api-key=ddaa9f57137bd7d9c261b9c191a22586:8:72425285',
+		
+	})
+	.done(console.log(datePicked))
+
+
+}
+
+bestSellers('2010-10-03');
 
 
 
