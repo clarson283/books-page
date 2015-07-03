@@ -48,11 +48,12 @@ var bestSellers = function (datePicked) {
 		//for (i = 0; i <= 20; i++) {
 			//var results = document.getElementById("bestSellerResults");
 			var newDiv = document.createElement("div");
+			var publishDate = document.createElement("div")
 			$('#bestSellerResults').append(newDiv);//should work by just using 'results'.. work on this
-			
+			$('#bestSellerResults').append(publishDate);
 			console.log(bestSellers);
 
-			newDiv.innerHTML = bestSellers.results.bestsellers_date;
+			publishDate.innerHTML = bestSellers.results.bestsellers_date;
 		//}
 	});
 
