@@ -41,8 +41,8 @@ getYearDropdown(year);
 function bestSellers (datePicked) {
 	$.ajax({
 		type: 'GET',
-		url: 'http://api.nytimes.com/svc/books/v3/lists/overview/.json?published_date=' + datePicked + '&api-key=ddaa9f57137bd7d9c261b9c191a22586:8:72425285',
-		
+		url: 'http://api.nytimes.com/svc/books/v3/lists/overview/.jsonp?published_date=' + datePicked + '&api-key=ddaa9f57137bd7d9c261b9c191a22586:8:72425285',
+		dataType: 'jsonp',
 	})
 	.done(console.log(datePicked))
 
