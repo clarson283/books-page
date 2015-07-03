@@ -21,5 +21,21 @@ function slideshow() {
 
 window.onload = slideshow;
 
+function getYearDropdown (year) {
+    var year = document.getElementById("year");
+    var thisYear = new Date().getFullYear();
+    var minYear = thisYear - 90;
+    
+    for(var i = thisYear; i >= minYear; i--) {
+        var option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = i;
+        year.appendChild(option);
+   
+    }
+}
+
+getYearDropdown(year);
+
 
 
