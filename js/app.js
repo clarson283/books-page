@@ -69,6 +69,8 @@ var bestSellers = function (datePicked) {
 
 function submitDropdown() {
 	var monthSection = $("#monthSection option:selected").val();
+	var daySection = $("#daySection option:selected").val();
+	var yearSection = $("#yearSection option:selected").val();
 	if (monthSection >= 1) {
 		bestSellers('2010-08-01');
 	} else {
