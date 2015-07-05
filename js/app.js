@@ -68,7 +68,12 @@ var bestSellers = function (datePicked) {
 }
 
 function submitDropdown() {
-	bestSellers('2010-08-01');
+	var monthSection = $("#monthSection option:selected").val();
+	if (monthSection >= 1) {
+		bestSellers('2010-08-01');
+	} else {
+		alert("Null")
+	}
 }
 
 
