@@ -46,7 +46,7 @@ var bestSellers = function (datePicked) {
 		dataType: 'jsonp', //jsonp works!!
 	})
 	.done(function(bestSellers) {
-		//for (i = 0; i <= 20; i++) {
+		//for (var i = 0; i <= 20; i++) {
 			//var results = document.getElementById("bestSellerResults");
 			var newDiv = document.createElement("div");
 			var publishDate = document.createElement("div")
@@ -55,7 +55,12 @@ var bestSellers = function (datePicked) {
 			console.log(bestSellers);
 
 			publishDate.innerHTML = bestSellers.results.bestsellers_date;
-			newDiv.innerHTML = bestSellers.results.lists[0].books[0].title;
+
+			for (var i = 0; i <= 14; i++) {
+				for (var j = 0; j <= 4; j++) {
+					newDiv.innerHTML = bestSellers.results.lists[i].books[j].title;
+				}
+			}
 		//}
 	});
 
