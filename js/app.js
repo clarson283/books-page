@@ -38,6 +38,7 @@ function getYearDropdown (year) {
 getYearDropdown(year);
 
 
+
 var bestSellers = function (datePicked) {
 	$.ajax({
 		type: 'GET',
@@ -54,13 +55,14 @@ var bestSellers = function (datePicked) {
 			console.log(bestSellers);
 
 			publishDate.innerHTML = bestSellers.results.bestsellers_date;
+			newDiv.innerHTML = bestSellers.results.lists[0].books[0].title;
 		//}
 	});
 
 
 }
 
-bestSellers('2010-10-03');
+bestSellers('2010-08-01');
 
 
 
