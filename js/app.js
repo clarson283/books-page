@@ -67,7 +67,10 @@ var bestSellers = function (datePicked) {
 
 }
 
-bestSellers('2010-08-01');
+function submitDropdown() {
+	bestSellers('2010-08-01');
+}
+
 
 
 
