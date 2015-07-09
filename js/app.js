@@ -56,9 +56,9 @@ var bestSellers = function (datePicked) {
 
 			publishDate.innerHTML = bestSellers.results.bestsellers_date;
 
-			for (var i = 0; i <= 14; i++) {
-				for (var j = 0; j <= 4; j++) {
-					newDiv.innerHTML = bestSellers.results.lists[i].books[j].title;
+			for (var i = 0; i < bestSellers.results.lists.length; i++) {
+				for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {
+					newDiv.innerHTML += bestSellers.results.lists[i].books[j].title + "<br>";
 				}
 			}
 		//}
