@@ -46,22 +46,22 @@ var bestSellers = function (datePicked) {
 		dataType: 'jsonp', //jsonp works!!
 	})
 	.done(function(bestSellers) {
-		//for (var i = 0; i <= 20; i++) {
-			//var results = document.getElementById("bestSellerResults");
-			var newDiv = document.createElement("div");
-			var publishDate = document.createElement("div")
-			$('#bestSellerResults').append(newDiv);//should work by just using 'results'.. work on this
-			$('#bestSellerResults').append(publishDate);
-			console.log(bestSellers);
+		var newDiv = document.createElement("div");
+		var titleHead = document.createElement("div")
+		var publishDate = document.createElement("div");
+		$('#bestSellerResults').append(titleHead);
+		$('#bestSellerResults').append(newDiv);
+		$('#bestSellerResults').append(publishDate);
+		console.log(bestSellers);
 
-			publishDate.innerHTML = bestSellers.results.bestsellers_date;
+		publishDate.innerHTML = bestSellers.results.bestsellers_date;
 
-			for (var i = 0; i < bestSellers.results.lists.length; i++) {
-				for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {
-					newDiv.innerHTML += bestSellers.results.lists[i].books[j].title + "<br>";
-				}
+		for (var i = 0; i < bestSellers.results.lists.length; i++) {
+			titleHead.innerHTML += bestSellers.results.lists[i].display_name + "<br>";
+			for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {		
+				newDiv.innerHTML += bestSellers.results.lists[i].books[j].title + "<br>";
 			}
-		//}
+		}
 	});
 
 
