@@ -47,21 +47,28 @@ var bestSellers = function (datePicked) {
 	})
 	.done(function(bestSellers) {
 		var newDiv = document.createElement("div");
-		var titleHead = document.createElement("div")
+		var titleHead = document.createElement("div");
+		titleHead.id = "allBooks";
 		var publishDate = document.createElement("div");
 		$('#bestSellerResults').append(titleHead);
-		$('#bestSellerResults').append(newDiv);
+		//document.getElementById('bestSellerResults').appendChild(newDiv);
+		//$('#bestSellerResults').append(newDiv);
 		$('#bestSellerResults').append(publishDate);
 		console.log(bestSellers);
 
 		publishDate.innerHTML = bestSellers.results.bestsellers_date;
 
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
-			titleHead.innerHTML += bestSellers.results.lists[i].display_name + "<br>";
-			for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {		
+			titleHead.innerHTML += "<a href='#'>" + bestSellers.results.lists[i].display_name + "</a><br>";
+		};
+		
+		$("#allBooks").click(function () {
+			alert("hi");
+			document.getElementById('bestSellerResults').appendChild(newDiv);
+			for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {			
 				newDiv.innerHTML += bestSellers.results.lists[i].books[j].title + "<br>";
 			}
-		}
+		})
 	});
 
 
