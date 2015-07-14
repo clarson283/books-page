@@ -47,8 +47,9 @@ var bestSellers = function (datePicked) {
 	})
 	.done(function(bestSellers) {
 		var newDiv = document.createElement("div");
+		newDiv.id = "allBooks";
 		var titleHead = document.createElement("div");
-		titleHead.id = "allBooks";
+		titleHead.id = "allTitles";
 		var publishDate = document.createElement("div");
 		$('#bestSellerResults').append(titleHead);
 		//document.getElementById('bestSellerResults').appendChild(newDiv);
@@ -62,7 +63,7 @@ var bestSellers = function (datePicked) {
 			titleHead.innerHTML += "<a href='#'>" + bestSellers.results.lists[i].display_name + "</a><br>";
 		};
 		
-		$("#allBooks").click(function () {
+		$("#allTitles").click(function () {
 			alert("hi");
 			document.getElementById('bestSellerResults').appendChild(newDiv);
 			for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {			
