@@ -60,14 +60,15 @@ var bestSellers = function (datePicked) {
 		publishDate.innerHTML = bestSellers.results.bestsellers_date;
 
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
-			titleHead.innerHTML += "<a href='#'>" + bestSellers.results.lists[i].display_name + "</a><br>";
+			titleHead.innerHTML += "<a href='#' data-index='" + i + "'>" + bestSellers.results.lists[i].display_name + "</a><br>";
 		};
 		
-		$("#allTitles").click(function () {
-			alert("hi");
+		$("#allTitles a").click(function (event) {
+			console.log(event.target);
+			var beachBall = event.target.getAttribute("data-index");
 			document.getElementById('bestSellerResults').appendChild(newDiv);
-			for (var j = 0; j < bestSellers.results.lists[i].books.length; j++) {			
-				newDiv.innerHTML += bestSellers.results.lists[i].books[j].title + "<br>";
+			for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {			
+				newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
 			}
 		})
 	});
