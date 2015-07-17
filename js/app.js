@@ -66,8 +66,12 @@ var bestSellers = function (datePicked) {
 		$("#allTitles a").click(function (event) {
 			console.log(event.target);
 			var beachBall = event.target.getAttribute("data-index");
-			document.getElementById('bestSellerResults').appendChild(newDiv);
-			for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {			
+			//document.getElementById("#bestSellerResults").appendChild(newDiv);
+			//event.target.appendChild(newDiv);
+			for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
+				event.target.appendChild(newDiv);	
+				$(newDiv).toggle();	
+				//$(event.target).insertAfter(newDiv);
 				newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
 			}
 		})
