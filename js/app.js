@@ -63,18 +63,37 @@ var bestSellers = function (datePicked) {
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
 			titleHead.innerHTML += "<li><a href='#' data-index='" + i + "'>" + bestSellers.results.lists[i].display_name + "</a></li>";
 		};
-		titleHead.innerHTML += "</ul>";
+		titleHead.innerHTML += "</ul>";//this one closes right after first ul tag-- issue!!
+
 
 		$("#allTitles a").click(function (event) {
-			console.log(event.target);
-			var beachBall = event.target.getAttribute("data-index");
-			$(newDiv).toggle();	
-			event.target.parentElement.appendChild(newDiv);	
-			for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
-				//$(newDiv).toggle();	
-				//event.target.appendChild(newDiv);	
-				newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
+			if ($("#allBooks").length === 0) {
+				event.preventDefault();
+				console.log(event.target);
+				var beachBall = event.target.getAttribute("data-index");
+				$(newDiv).toggle();	
+				event.target.parentElement.appendChild(newDiv);	
+				for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
+					//$(newDiv).toggle();	
+					//event.target.appendChild(newDiv);	
+					newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
+				}
+
+			} else {
+				//alert("else");
+				event.preventDefault();
+				$("#allBooks").remove();
+				console.log(event.target);
+				var beachBall = event.target.getAttribute("data-index");
+				$(newDiv).toggle();	
+				event.target.parentElement.appendChild(newDiv);	
+				for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
+					//$(newDiv).toggle();	
+					//event.target.appendChild(newDiv);	
+					newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
+				}
 			}
+
 		})
 	});
 
