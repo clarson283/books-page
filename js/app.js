@@ -91,6 +91,7 @@ var bestSellers = function (datePicked) {
 			} else {
 				alert("else");
 				event.preventDefault();
+				newDiv.innerHTML = "";
 				$("#allBooks").remove();
 				console.log(event.target);
 				//var beachBall = event.target.getAttribute("data-index");
