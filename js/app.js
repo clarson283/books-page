@@ -46,10 +46,10 @@ var bestSellers = function (datePicked) {
 		dataType: 'jsonp', //jsonp works!!
 	})
 	.done(function(bestSellers) {
-		var newDiv = document.createElement("div");
-		newDiv.id = "allBooks";
 		var titleHead = document.createElement("div");
 		titleHead.id = "allTitles";
+		var newDiv = document.createElement("div");
+			newDiv.id = "allBooks";
 		var publishDate = document.createElement("div");
 		$('#bestSellerResults').append(titleHead);
 		//document.getElementById('bestSellerResults').appendChild(newDiv);
@@ -67,24 +67,33 @@ var bestSellers = function (datePicked) {
 
 
 		$("#allTitles a").click(function (event) {
+			//var newDiv = document.createElement("div");
+			//newDiv.id = "allBooks";
+			var beachBall = event.target.getAttribute("data-index");
+			console.log($(event.target.parentElement).children().length);
 			if ($("#allBooks").length === 0) {
 				event.preventDefault();
 				console.log(event.target);
-				var beachBall = event.target.getAttribute("data-index");
-				$(newDiv).toggle();	
+				//var beachBall = event.target.getAttribute("data-index");
+				//$(newDiv).toggle();	
 				event.target.parentElement.appendChild(newDiv);	
 				for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
 					//$(newDiv).toggle();	
 					//event.target.appendChild(newDiv);	
 					newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
 				}
-
+			} else if ($(event.target.parentElement).children().length > 1) {
+				alert("same");
+				event.preventDefault();
+				//$(newDiv).remove();
+				newDiv.innerHTML = "";
+				$(newDiv).toggle();
 			} else {
-				//alert("else");
+				alert("else");
 				event.preventDefault();
 				$("#allBooks").remove();
 				console.log(event.target);
-				var beachBall = event.target.getAttribute("data-index");
+				//var beachBall = event.target.getAttribute("data-index");
 				$(newDiv).toggle();	
 				event.target.parentElement.appendChild(newDiv);	
 				for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
