@@ -63,6 +63,7 @@ var bestSellers = function (datePicked) {
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
 			titleHead.innerHTML += "<li><a href='#' data-index='" + i + "'>" + bestSellers.results.lists[i].display_name + "</a></li>";
 		};
+		$("#bestSellerResults li").addClass("col-md-4");
 		titleHead.innerHTML += "</ul>";//this one closes right after first ul tag-- issue!!
 
 

@@ -43,7 +43,7 @@
 	<div id="dateForm" class="container-fluid">
 		<div id="monthSection">
 		    <select id="month" name="month">
-		        <option selected value="">--Select Month--</option>
+		        <option selected value="">Select Month</option>
 		        <option value="01">January</option>
 		        <option value="02">February</option>
 		        <option value="03">March</option>
@@ -61,7 +61,7 @@
 
 		<div id="daySection">
 		    <select id="day" name="day">
-		        <option selected value="">--Select Day--</option>
+		        <option selected value="">Select Day</option>
 		        <option value="01">1</option>
 			    <option value="02">2</option>
 			    <option value="03">3</option>
@@ -98,14 +98,17 @@
 
 		<div id="yearSection">
 			<select name="year" id="year">
-			    <option value="0">--Select Year--</option>
+			    <option value="0">Select Year</option>
 			</select>
 		</div>
-		<button type="button" onclick="submitDropdown()">Submit</button>
+		<div id="buttonSection">
+			<button type="button" onclick="submitDropdown()">Submit</button>
+		</div>
 	</div>
 
-	<div class="container">
-		<div id="bestSellerResults"></div>
+
+	<div class="container-fluid pull-left" id="bestSellerResults">
+			
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
