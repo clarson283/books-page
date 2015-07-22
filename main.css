@@ -54,6 +54,22 @@ img {
 	letter-spacing: 6px;
 }
 
+#dateForm {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+div#monthSection, div#daySection, div#yearSection {
+	display: inline-block;
+	padding: 20px;
+}
+
+select#month, select#day, select#year {
+	border-radius: 0;
+	border: 1px solid black;
+}
+
 
 
 
