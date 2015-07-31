@@ -63,7 +63,7 @@ var bestSellers = function (datePicked) {
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
 			titleHead.innerHTML += "<li><a href='#' data-index='" + i + "'>" + bestSellers.results.lists[i].display_name + "</a></li>";
 		};
-		$("#bestSellerResults li").addClass("col-md-4");
+		$("#bestSellerResults li").addClass("col-md-3");
 		titleHead.innerHTML += "</ul>";//this one closes right after first ul tag-- issue!!
 
 
@@ -101,6 +101,17 @@ var bestSellers = function (datePicked) {
 
 }
 
+/*
+var gUrl = function () {
+	$.ajax({
+		type: 'GET',
+		url: 'https://www.googleapis.com/books/v1/volumes?q=galaxy+inauthor:adams&key=AIzaSyA_G9RIwihluQqZzkKoBgDd9oOoa_urP64',
+		dataType: 'jsonp',
+	})
+	.done(console.log())
+}*/
+
+
 function submitDropdown() {
 	var monthSection = $("#monthSection option:selected").val();
 	var daySection = $("#daySection option:selected").val();
@@ -111,7 +122,26 @@ function submitDropdown() {
 	} else {
 		alert("Null")
 	}
+
 }
+
+
+var gRapi = function (title) {
+	$.ajax({
+		type: 'GET',
+		url: 'https://goodreads.com/book/title.JSONP?Jane+Austen&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
+		dataType: 'jsonp'
+	})
+	.done(function(response) {
+		alert("hi");
+		//$("#goodReads").append(results.book.title);
+		resp = response.GoodreadsResponse.title;
+		console.log(resp)
+	});
+}
+
+gRapi('Emma');
+
 
 
 
