@@ -137,7 +137,7 @@ var gRapi = function (title) {
 		//$("#goodReads").append(results.book.title);
 		//resp = response.GoodreadsResponse.title;
 		console.log(response);
-		$("#goodReads").text(response);
+		$("#goodReads").html(response.reviews_widget);
 	});
 }
 
