@@ -47,7 +47,7 @@ var bestSellers = function (datePicked) {
 	})
 	.done(function(bestSellers) {
 		var titleHead = document.createElement("div");
-		titleHead.id = "allTitles";
+			titleHead.id = "allTitles";
 		var newDiv = document.createElement("div");
 			newDiv.id = "allBooks";
 		var publishDate = document.createElement("div");
@@ -129,14 +129,15 @@ function submitDropdown() {
 var gRapi = function (title) {
 	$.ajax({
 		type: 'GET',
-		url: 'https://goodreads.com/book/title.JSONP?Jane+Austen&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
+		url: 'https://goodreads.com/book/title.jsonp?Jane+Austen&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
 		dataType: 'jsonp'
 	})
 	.done(function(response) {
 		alert("hi");
 		//$("#goodReads").append(results.book.title);
-		resp = response.GoodreadsResponse.title;
-		console.log(resp)
+		//resp = response.GoodreadsResponse.title;
+		console.log(response);
+		$("#goodReads").text(response);
 	});
 }
 
