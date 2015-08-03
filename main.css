@@ -103,7 +103,10 @@ select#month, select#day, select#year {
 	margin: 12px;
 }
 
-
+#goodReads {
+	display: block;
+	margin: auto;
+}
 
 #allBooks {
 	color: black;

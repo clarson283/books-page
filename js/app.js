@@ -126,10 +126,10 @@ function submitDropdown() {
 }
 
 
-var gRapi = function (title) {
+var gRapi = function (authFirst, authLast, title) {
 	$.ajax({
 		type: 'GET',
-		url: 'https://goodreads.com/book/title.jsonp?Jane+Austen&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
+		url: 'https://goodreads.com/book/title.jsonp?' + authFirst + '+' + authLast + '&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
 		dataType: 'jsonp'
 	})
 	.done(function(response) {
@@ -141,7 +141,7 @@ var gRapi = function (title) {
 	});
 }
 
-gRapi('Emma');
+gRapi('Jane', 'Austen', 'Emma');
 
 
 
