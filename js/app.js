@@ -50,14 +50,15 @@ var bestSellers = function (datePicked) {
 			titleHead.id = "allTitles";
 		var newDiv = document.createElement("div");
 			newDiv.id = "allBooks";
-		var publishDate = document.createElement("div");
+		//var publishDate = document.createElement("span");
+		//publishDate.innerHTML = bestSellers.results.bestsellers_date;
+		var publishDate = new Date(bestSellers.results.bestsellers_date);
+		$('#bestSellerResults').append("<h1>Best Sellers for the Week of " + publishDate + "</h1>");//not working
 		$('#bestSellerResults').append(titleHead);
 		//document.getElementById('bestSellerResults').appendChild(newDiv);
 		//$('#bestSellerResults').append(newDiv);
-		$('#bestSellerResults').append(publishDate);
 		console.log(bestSellers);
 
-		publishDate.innerHTML = bestSellers.results.bestsellers_date;
 
 		titleHead.innerHTML += "<ul>";
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
@@ -91,26 +92,32 @@ var bestSellers = function (datePicked) {
 				$(newDiv).toggle();	
 				event.target.parentElement.appendChild(newDiv);	
 				for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
-					newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
+					newDiv.innerHTML += "<a href='#' class='titleName'>" + bestSellers.results.lists[beachBall].books[j].title + "</a><br>";
+					newDiv.innerHTML += "<div class='authorName'>" + bestSellers.results.lists[beachBall].books[j].contributor + "</div><br>";
 				}
 			}
 
 		})
+		//this is just checking shitttt
+		$(".titleName a").on("click", function() {
+			alert("whoa");
+			var auth = str.split('.authorName');
+			console.log(auth);
+		});
+
+
+
 	});
 
 
 }
-
 /*
-var gUrl = function () {
-	$.ajax({
-		type: 'GET',
-		url: 'https://www.googleapis.com/books/v1/volumes?q=galaxy+inauthor:adams&key=AIzaSyA_G9RIwihluQqZzkKoBgDd9oOoa_urP64',
-		dataType: 'jsonp',
-	})
-	.done(console.log())
-}*/
-
+$("a").on("click", function() {
+	alert("whoa");
+	var auth = str.split('.authorName');
+	console.log(auth);
+});
+*/
 
 function submitDropdown() {
 	var monthSection = $("#monthSection option:selected").val();
@@ -141,7 +148,7 @@ var gRapi = function (authFirst, authLast, title) {
 	});
 }
 
-gRapi('Jane', 'Austen', 'Emma');
+//gRapi('Jane', 'Austen', 'Emma');
 
 
 

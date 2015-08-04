@@ -112,4 +112,5 @@ select#month, select#day, select#year {
 	color: black;
 	text-transform: lowercase;
 	text-decoration: none;
+	padding: 8px;
 }
