@@ -55,6 +55,7 @@ var bestSellers = function (datePicked) {
 		var publishDate = new Date(bestSellers.results.bestsellers_date);
 		$('#bestSellerResults').append("<h1>Best Sellers for the Week of " + publishDate + "</h1>");//not working
 		$('#bestSellerResults').append(titleHead);
+		$('bestSellerResults').append(newDiv);//IS THIS OKAY?? HMMMMMMM...
 		//document.getElementById('bestSellerResults').appendChild(newDiv);
 		//$('#bestSellerResults').append(newDiv);
 		console.log(bestSellers);
@@ -64,7 +65,7 @@ var bestSellers = function (datePicked) {
 		for (var i = 0; i < bestSellers.results.lists.length; i++) {
 			titleHead.innerHTML += "<li><a href='#' data-index='" + i + "'>" + bestSellers.results.lists[i].display_name + "</a></li>";
 		};
-		$("#bestSellerResults li").addClass("col-md-3");
+		$("#bestSellerResults li").addClass("col-md-8");
 		titleHead.innerHTML += "</ul>";//this one closes right after first ul tag-- issue!!
 
 		$("#allTitles a").click(function (event) {
@@ -101,7 +102,8 @@ var bestSellers = function (datePicked) {
 		
 		$("a").on("click", function() {
 			alert("whoa");
-			var auth = bestSellers.results.lists[beachBall].books[j].contributor.split('.authorName');
+			var author = 'Jane Austen'
+			var auth = author.split();
 			console.log(auth);
 		});
 
