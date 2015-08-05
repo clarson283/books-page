@@ -67,7 +67,6 @@ var bestSellers = function (datePicked) {
 		$("#bestSellerResults li").addClass("col-md-3");
 		titleHead.innerHTML += "</ul>";//this one closes right after first ul tag-- issue!!
 
-
 		$("#allTitles a").click(function (event) {
 			var beachBall = event.target.getAttribute("data-index");
 			console.log($(event.target.parentElement).children().length);
@@ -76,7 +75,8 @@ var bestSellers = function (datePicked) {
 				console.log(event.target);
 				event.target.parentElement.appendChild(newDiv);	
 				for (var j = 0; j < bestSellers.results.lists[beachBall].books.length; j++) {	
-					newDiv.innerHTML += bestSellers.results.lists[beachBall].books[j].title + "<br>";
+					newDiv.innerHTML += "<a href='#' class='titleName'>" + bestSellers.results.lists[beachBall].books[j].title + "</a><br>";
+					newDiv.innerHTML += "<div class='authorName'>" + bestSellers.results.lists[beachBall].books[j].contributor + "</div><br>";
 				}
 			} else if ($(event.target.parentElement).children().length > 1) {
 				//alert("same");
@@ -98,14 +98,12 @@ var bestSellers = function (datePicked) {
 			}
 
 		})
-		//this is just checking shitttt
-		$(".titleName a").on("click", function() {
+		
+		$("a").on("click", function() {
 			alert("whoa");
-			var auth = str.split('.authorName');
+			var auth = bestSellers.results.lists[beachBall].books[j].contributor.split('.authorName');
 			console.log(auth);
 		});
-
-
 
 	});
 
@@ -114,11 +112,10 @@ var bestSellers = function (datePicked) {
 /*
 $("a").on("click", function() {
 	alert("whoa");
-	var auth = str.split('.authorName');
+	var auth = bestSellers.results.lists[beachBall].books[j].contributor.split('.authorName');
 	console.log(auth);
 });
 */
-
 function submitDropdown() {
 	var monthSection = $("#monthSection option:selected").val();
 	var daySection = $("#daySection option:selected").val();
