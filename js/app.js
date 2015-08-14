@@ -84,13 +84,13 @@ var bestSellers = function (datePicked) {
 					newDiv.innerHTML += "<div class='authorName'>" + bestSellers.results.lists[beachBall].books[j].contributor + "</div><br>";
 				}
 			} else if ($(event.target.parentElement).children().length > 1) {
-				alert("same");
+				//alert("same");
 				event.preventDefault();
 				//newDiv.innerHTML = "";
 				//$(".allBooks").hide();
 				$(event.target.parentElement).find(".allBooks").toggle();
 			} else {
-				alert("else");
+				//alert("else");
 				event.preventDefault();
 				newDiv.innerHTML = "";
 				$(".allBooks").hide();
@@ -110,11 +110,13 @@ var bestSellers = function (datePicked) {
 }
 
 
-$("a").on("click", function() {
+$(document).on("click", ".allBooks a", function() {
 	alert("whoa");
+	event.preventDefault();
 	var author = 'Jane Austen'
-	var auth = author.split();
+	var auth = author.split(" ");
 	console.log(auth);
+	gRapi(auth[0], auth[1], 'Emma');
 });
 
 
