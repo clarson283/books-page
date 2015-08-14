@@ -37,6 +37,7 @@ img {
 	padding-bottom: 6px;
 	border-bottom: 2px solid #197575;
 	color: black;
+	display: block;
 	letter-spacing: 2px;
 	-webkit-transition: border-bottom 1s ease-out;
     -moz-transition: border-bottom 1s ease-out;
@@ -95,7 +96,8 @@ select#month, select#day, select#year {
 
 #bestSellerResults li {
 	list-style: none;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	text-decoration: none;
 	color: black;
 	border: 1px solid black;

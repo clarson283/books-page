@@ -99,25 +99,20 @@ var bestSellers = function (datePicked) {
 			}
 
 		})
-		
-		$("a").on("click", function() {
-			alert("whoa");
-			var author = 'Jane Austen'
-			var auth = author.split();
-			console.log(auth);
-		});
-
 	});
 
 
 }
-/*
+
+
 $("a").on("click", function() {
 	alert("whoa");
-	var auth = bestSellers.results.lists[beachBall].books[j].contributor.split('.authorName');
+	var author = 'Jane Austen'
+	var auth = author.split();
 	console.log(auth);
 });
-*/
+
+
 function submitDropdown() {
 	var monthSection = $("#monthSection option:selected").val();
 	var daySection = $("#daySection option:selected").val();
