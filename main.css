@@ -110,7 +110,7 @@ select#month, select#day, select#year {
 	margin: auto;
 }
 
-#allBooks {
+.allBooks {
 	color: black;
 	text-transform: lowercase;
 	text-decoration: none;

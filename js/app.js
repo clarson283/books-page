@@ -48,14 +48,14 @@ var bestSellers = function (datePicked) {
 	.done(function(bestSellers) {
 		var titleHead = document.createElement("div");
 			titleHead.id = "allTitles";
-		var newDiv = document.createElement("div");
-			newDiv.id = "allBooks";
+		//var newDiv = document.createElement("div");
+		//	newDiv.className = "allBooks";
 		//var publishDate = document.createElement("span");
 		//publishDate.innerHTML = bestSellers.results.bestsellers_date;
 		var publishDate = new Date(bestSellers.results.bestsellers_date);
 		$('#bestSellerResults').append("<h1>Best Sellers for the Week of " + publishDate + "</h1>");//not working
 		$('#bestSellerResults').append(titleHead);
-		$('bestSellerResults').append(newDiv);//IS THIS OKAY?? HMMMMMMM...
+		//$('bestSellerResults').append(newDiv);//IS THIS OKAY?? HMMMMMMM...
 		//document.getElementById('bestSellerResults').appendChild(newDiv);
 		//$('#bestSellerResults').append(newDiv);
 		console.log(bestSellers);
@@ -70,8 +70,12 @@ var bestSellers = function (datePicked) {
 
 		$("#allTitles a").click(function (event) {
 			var beachBall = event.target.getAttribute("data-index");
+			//var insideDiv;
 			console.log($(event.target.parentElement).children().length);
-			if ($("#allBooks").length === 0) {
+			if ($(event.target.parentElement).children().length === 1) {
+				var newDiv = document.createElement("div");
+					newDiv.className = "allBooks";
+				$(titleHead).append(newDiv);
 				event.preventDefault();
 				console.log(event.target);
 				event.target.parentElement.appendChild(newDiv);	
@@ -80,15 +84,16 @@ var bestSellers = function (datePicked) {
 					newDiv.innerHTML += "<div class='authorName'>" + bestSellers.results.lists[beachBall].books[j].contributor + "</div><br>";
 				}
 			} else if ($(event.target.parentElement).children().length > 1) {
-				//alert("same");
+				alert("same");
 				event.preventDefault();
-				newDiv.innerHTML = "";
-				$(newDiv).toggle();
+				//newDiv.innerHTML = "";
+				//$(".allBooks").hide();
+				$(event.target.parentElement).find(".allBooks").toggle();
 			} else {
-				//alert("else");
+				alert("else");
 				event.preventDefault();
 				newDiv.innerHTML = "";
-				$("#allBooks").remove();
+				$(".allBooks").hide();
 				console.log(event.target);
 				$(newDiv).toggle();	
 				event.target.parentElement.appendChild(newDiv);	
