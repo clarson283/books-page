@@ -118,7 +118,9 @@ $(document).on("click", ".allBooks a", function() {
 	var plusSigns = justWriter.replace(/ /g,"+");
 	//var auth = author.split(" ");
 	console.log(plusSigns);
-	gRapi(plusSigns, 'The+Hunger+Games');
+	var title = $(event.target).html();
+	var titlePlus = title.replace(/ /g,"+");
+	gRapi(plusSigns, titlePlus);
 });
 
 
@@ -139,7 +141,7 @@ function submitDropdown() {
 var gRapi = function (author, title) {
 	$.ajax({
 		type: 'GET',
-		url: 'https://goodreads.com/book/title.jsonp?' + author + '&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
+		url: 'https://goodreads.com/book/title.jsonp?author=' + author + '&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
 		dataType: 'jsonp'
 	})
 	.done(function(response) {
