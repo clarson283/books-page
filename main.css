@@ -1,118 +1,111 @@
 #main-image {
-	width: 80%;
-	display: inline-block;
-	padding-left: 0;
-	padding-right: 0;
-	/*background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
-  	 /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-	 /* background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
-	 /* background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
-	 /* background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
-	 /* background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
-
+  width: 80%;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0
+  /*background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  /* background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+  /* background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+  /* background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+  /* background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
 }
-
 img {
-	width: 100%;
-	float: left;
-	z-index: -1;
-	position: relative;
-	display: block; 
+  width: 100%;
+  float: left;
+  z-index: -1;
+  position: relative;
+  display: block;
 }
-
 .nav {
-	width: 20%;
-	float: right;
-	position: fixed;
-	right: 0;
+  width: 20%;
+  float: right;
+  position: fixed;
+  right: 0;
 }
-
 .nav li {
-	padding-top: 16px;
-	padding-bottom: 16px;
-	list-style: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  list-style: none;
 }
-
 .nav li a {
-	padding-bottom: 6px;
-	border-bottom: 2px solid #197575;
-	color: black;
-	display: block;
-	letter-spacing: 2px;
-	-webkit-transition: border-bottom 1s ease-out;
-    -moz-transition: border-bottom 1s ease-out;
-    -o-transition: border-bottom 1s ease-out;
-    transition: border-bottom 1s ease-out;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #197575;
+  color: black;
+  display: block;
+  letter-spacing: 2px;
+  -webkit-transition: border-bottom 1s ease-out;
+  transition: border-bottom 1s ease-out;
 }
-
-.nav li a:hover, .nav li a:focus {
-	text-decoration: none;
-	border-bottom: 2px solid #FF6666;
-	
+.nav li a:hover,
+.nav li a:focus {
+  text-decoration: none;
+  border-bottom: 2px solid #FF6666;
 }
-
 #head {
-	padding: 20px;
-	font-size: 26px;
-	text-transform: uppercase;
-	letter-spacing: 6px;
+  padding: 20px;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
 }
-
 #dateForm {
-	display: block;
-	margin: auto;
-	width: 80%;
+  display: block;
+  margin: auto;
+  width: 80%;
 }
-
-div#monthSection, div#daySection, div#yearSection, div#buttonSection {
-	display: inline-block;
-	padding: 20px;
+div#monthSection,
+div#daySection,
+div#yearSection,
+div#buttonSection {
+  display: inline-block;
+  padding: 20px;
 }
-
-select#month, select#day, select#year {
-	-webkit-appearance: none;
-  	-webkit-border-radius: 0px;
-	border-radius: 0;
-	border: 1px solid black;
-	padding: 8px 12px;
-	background-color: white;
-	letter-spacing: 4px;
+select#month,
+select#day,
+select#year {
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 8px 12px;
+  background-color: white;
+  letter-spacing: 4px;
 }
-
 #dateForm button {
-	-webkit-appearance: none;
-  	-webkit-border-radius: 0px;
-	border-radius: 0;
-	border: 1px solid #197575;
-	padding: 8px 12px;
-	background-color: #197575;
-	color: white;
-	letter-spacing: 4px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 1px solid #197575;
+  padding: 8px 12px;
+  background-color: #197575;
+  color: white;
+  letter-spacing: 4px;
 }
-
 #bestSellerResults {
-	width: 80%;
+  width: 80%;
 }
-
 #bestSellerResults li {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	text-decoration: none;
-	color: black;
-	border: 1px solid black;
-	padding: 12px;
-	margin: 12px;
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 12px;
+  margin: 12px;
 }
-
 #goodReads {
-	display: block;
-	margin: auto;
+  display: block;
+  margin: auto;
 }
-
 .allBooks {
-	color: black;
-	text-transform: lowercase;
-	text-decoration: none;
-	padding: 8px;
+  color: black;
+  text-transform: lowercase;
+  text-decoration: none;
+  padding: 8px;
 }
