@@ -89,7 +89,7 @@ var bestSellers = function (datePicked) {
 				//newDiv.innerHTML = "";
 				//$(".allBooks").hide();
 				$(event.target.parentElement).find(".allBooks").toggle();
-			} else {
+			} else {//probably have to take this whole part out
 				//alert("else");
 				event.preventDefault();
 				newDiv.innerHTML = "";
@@ -113,10 +113,12 @@ var bestSellers = function (datePicked) {
 $(document).on("click", ".allBooks a", function() {
 	alert("whoa");
 	event.preventDefault();
-	var author = 'Jane Austen'
-	var auth = author.split(" ");
-	console.log(auth);
-	gRapi(auth[0], auth[1], 'Emma');
+	var author = $(event.target).nextAll(".authorName").first().html();
+	var justWriter = author.substring(3, author.length);
+	var plusSigns = justWriter.replace(/ /g,"+");
+	//var auth = author.split(" ");
+	console.log(plusSigns);
+	gRapi(plusSigns, 'The+Hunger+Games');
 });
 
 
@@ -134,10 +136,10 @@ function submitDropdown() {
 }
 
 
-var gRapi = function (authFirst, authLast, title) {
+var gRapi = function (author, title) {
 	$.ajax({
 		type: 'GET',
-		url: 'https://goodreads.com/book/title.jsonp?' + authFirst + '+' + authLast + '&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
+		url: 'https://goodreads.com/book/title.jsonp?' + author + '&key=7zvk1HpU3FrIyFNTzkEzHw&title=' + title,
 		dataType: 'jsonp'
 	})
 	.done(function(response) {
