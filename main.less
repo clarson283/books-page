@@ -1,3 +1,5 @@
+@main-green: #197575;
+
 #main-image {
 	width: 80%;
 	display: inline-block;
@@ -34,7 +36,7 @@ img {
 
 	a {
 		padding-bottom: 6px;
-		border-bottom: 2px solid #197575;
+		border-bottom: 2px solid @main-green;
 		color: black;
 		display: block;
 		letter-spacing: 2px;
@@ -42,13 +44,12 @@ img {
 	    -moz-transition: border-bottom 1s ease-out;
 	    -o-transition: border-bottom 1s ease-out;
 	    transition: border-bottom 1s ease-out;
-   	}
-}
 
-.nav li a:hover, .nav li a:focus {
-	text-decoration: none;
-	border-bottom: 2px solid #FF6666;
-	
+	    &:hover, &:focus {
+	    	text-decoration: none;
+			border-bottom: 2px solid #FF6666;
+	    }
+   	}
 }
 
 #head {
@@ -56,6 +57,7 @@ img {
 	font-size: 26px;
 	text-transform: uppercase;
 	letter-spacing: 6px;
+	color: @main-green;
 }
 
 #dateForm {
@@ -83,9 +85,9 @@ select#month, select#day, select#year {
 	-webkit-appearance: none;
   	-webkit-border-radius: 0px;
 	border-radius: 0;
-	border: 1px solid #197575;
+	border: 1px solid @main-green;
 	padding: 8px 12px;
-	background-color: #197575;
+	background-color: @main-green;
 	color: white;
 	letter-spacing: 4px;
 }
