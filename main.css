@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Tangerine:400,700);
 /*#197575;*/
 #main-image {
   width: 80%;
@@ -44,11 +45,12 @@ img {
   border-bottom: 2px solid #FF6666;
 }
 #head {
-  padding: 20px;
-  font-size: 26px;
-  text-transform: uppercase;
+  font-family: 'Tangerine', cursive;
+  padding: 4px 16px;
+  font-size: 66px;
   letter-spacing: 6px;
   color: #194775;
+  line-height: 1.2em;
 }
 #dateForm {
   display: block;
