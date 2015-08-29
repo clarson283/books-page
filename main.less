@@ -1,4 +1,5 @@
-@main-green: #197575;
+@main-green: #196675; /*#197575;*/
+@main-blue: #194775;
 
 #main-image {
 	width: 80%;
@@ -57,64 +58,8 @@ img {
 	font-size: 26px;
 	text-transform: uppercase;
 	letter-spacing: 6px;
-	color: @main-green;
+	color: @main-blue;
 }
 
-#dateForm {
-	display: block;
-	margin: auto;
-	width: 80%;
-}
-
-div#monthSection, div#daySection, div#yearSection, div#buttonSection {
-	display: inline-block;
-	padding: 20px;
-}
-
-select#month, select#day, select#year {
-	-webkit-appearance: none;
-  	-webkit-border-radius: 0px;
-	border-radius: 0;
-	border: 1px solid black;
-	padding: 8px 12px;
-	background-color: white;
-	letter-spacing: 4px;
-}
-
-#dateForm button {
-	-webkit-appearance: none;
-  	-webkit-border-radius: 0px;
-	border-radius: 0;
-	border: 1px solid @main-green;
-	padding: 8px 12px;
-	background-color: @main-green;
-	color: white;
-	letter-spacing: 4px;
-}
-
-#bestSellerResults {
-	width: 80%;
-}
-
-#bestSellerResults li {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	text-decoration: none;
-	color: black;
-	border: 1px solid black;
-	padding: 12px;
-	margin: 12px;
-}
-
-#goodReads {
-	display: block;
-	margin: auto;
-}
-
-.allBooks {
-	color: black;
-	text-transform: lowercase;
-	text-decoration: none;
-	padding: 8px;
-}
+@import "dropdowns";
+@import "book-results";

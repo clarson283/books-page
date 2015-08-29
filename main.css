@@ -1,3 +1,4 @@
+/*#197575;*/
 #main-image {
   width: 80%;
   display: inline-block;
@@ -30,7 +31,7 @@ img {
 }
 .nav li a {
   padding-bottom: 6px;
-  border-bottom: 2px solid #197575;
+  border-bottom: 2px solid #196675;
   color: black;
   display: block;
   letter-spacing: 2px;
@@ -47,12 +48,26 @@ img {
   font-size: 26px;
   text-transform: uppercase;
   letter-spacing: 6px;
-  color: #197575;
+  color: #194775;
 }
 #dateForm {
   display: block;
   margin: auto;
   width: 80%;
+}
+#dateForm button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 1px solid #196675;
+  padding: 8px 12px;
+  background-color: #196675;
+  color: white;
+  letter-spacing: 4px;
+  -webkit-transition: background-color 1s ease;
+          transition: background-color 1s ease;
+}
+#dateForm button:hover {
+  background-color: #194775;
 }
 div#monthSection,
 div#daySection,
@@ -69,15 +84,6 @@ select#year {
   border: 1px solid black;
   padding: 8px 12px;
   background-color: white;
-  letter-spacing: 4px;
-}
-#dateForm button {
-  -webkit-appearance: none;
-  border-radius: 0;
-  border: 1px solid #197575;
-  padding: 8px 12px;
-  background-color: #197575;
-  color: white;
   letter-spacing: 4px;
 }
 #bestSellerResults {
